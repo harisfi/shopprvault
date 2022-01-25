@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('role', ['admin', 'customer']);
             $table->string('profile_pic')->nullable();
+            $table->boolean('approved')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
