@@ -8,8 +8,13 @@
             <ul class="header-links pull-right">
                 @if (Auth::check())
                     <li>
-                        <a href="{{ auth()->user()->role == 'admin' ? route('admin') : url('/') }}">
+                        <a href="{{ auth()->user()->role == 'admin' ? route('admin.dashboard') : url('/') }}">
                             <i class="fa fa-user-o"></i> {{ auth()->user()->name }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('logout') }}">
+                            <i class="fa fa-sign-out"></i> Logout
                         </a>
                     </li>
                 @else
