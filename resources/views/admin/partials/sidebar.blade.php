@@ -8,14 +8,14 @@
 
     <hr class="sidebar-divider my-0">
 
-    <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+    <li class="nav-item @if (request()->is('admin')) active @endif">
+        <a class="nav-link" href="{{ route('admin.dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
+    <li class="nav-item @if (request()->is('admin/users*')) active @endif">
+        <a class="nav-link" href="{{ route('admin.users.all') }}">
             <i class="fas fa-fw fa-users"></i>
             <span>Users</span>
         </a>

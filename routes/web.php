@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\User\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/admin', [DashboardController::class, 'index']);
+Route::prefix('admin')->name('admin')->group(function() {
+    Route::get('/', [DashboardController::class, 'index'])->name('.dashboard');
+    Route::prefix('users')->name('.users')->group(function() {
+        Route::get('/', [UserController::class, 'index'])->name('.all');
+        Route::get('/{id}', [UserController::class, 'show'])->name('.show');
+        Route::get('/{id}/approve', [UserController::class, 'approve'])->name('.approve');
+    });
+});

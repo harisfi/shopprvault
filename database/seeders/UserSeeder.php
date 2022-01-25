@@ -18,12 +18,26 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Admin',
                 'email' => 'admin@shopprvault.com',
-                'role' => 'admin'
+                'role' => 'admin',
+                'profile_pic' => '/images/profile.svg'
             ],
             [
                 'name' => 'Customer',
-                'email' => 'customer@gmail.com'
-            ]
+                'email' => 'customer@gmail.com',
+                'profile_pic' => '/images/profile.svg'
+            ],
+            [
+                'name' => 'Customer2',
+                'email' => 'customer2@gmail.com',
+                'approved' => false,
+                'profile_pic' => '/images/profile.svg'
+            ],
+            [
+                'name' => 'Customer3',
+                'email' => 'customer3@gmail.com',
+                'approved' => false,
+                'profile_pic' => '/images/profile.svg'
+            ],
         ];
 
         foreach ($users as $user) {
