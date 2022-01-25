@@ -4,7 +4,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>@stack('title') - Dashboard</title>
+<title>@stack('title') - ShopprVault Admin</title>
 
 <link href="{{ asset('/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 <link

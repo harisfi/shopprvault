@@ -6,7 +6,19 @@
                 <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
             </ul>
             <ul class="header-links pull-right">
-                <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+                @if (Auth::check())
+                    <li>
+                        <a href="{{ auth()->user()->role == 'admin' ? route('admin') : url('/') }}">
+                            <i class="fa fa-user-o"></i> {{ auth()->user()->name }}
+                        </a>
+                    </li>
+                @else
+                    <li>
+                        <a href="{{ route('login') }}">
+                            <i class="fa fa-user-o"></i> Login
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>
