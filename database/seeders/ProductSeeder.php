@@ -14,6 +14,8 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        Product::factory()->count(16)->create();
+        Product::factory()->count(16)->create([
+            'picture' => '/images/product.png'
+        ]);
     }
 }
